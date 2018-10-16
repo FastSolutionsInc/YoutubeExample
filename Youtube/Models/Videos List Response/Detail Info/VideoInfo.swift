@@ -7,6 +7,7 @@ final class VideoInfo {
     var etag: String?
     var kind: String?
     var id: VideoId?
+    var snippet: Snippet?
 
 }
 
@@ -20,6 +21,7 @@ extension VideoInfo: Mappable {
         etag <- map["etag"]
         kind <- map["kind"]
         id <- map["id"]
+        snippet <- map["snippet"]
     }
 
 }

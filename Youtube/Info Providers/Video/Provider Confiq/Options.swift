@@ -6,6 +6,7 @@ struct Options {
 
     enum Part: String {
         case id
+        case snippet
     }
 
     enum `Type`: String {
@@ -21,7 +22,7 @@ struct Options {
     }
     let nextPageToken: String?
 
-    init(_ part: Part = .id, maxResults: Int = 10, q: String = "", type: Type = .video, nextPageToken: String? = nil ) {
+    init(_ part: Part = .snippet, maxResults: Int = 10, q: String = "", type: Type = .video, nextPageToken: String? = nil ) {
         self.part = part
         self.maxResults = maxResults
         self.q = q
