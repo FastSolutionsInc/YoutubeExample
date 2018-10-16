@@ -32,6 +32,30 @@ final class RootViewController: UIViewController {
 
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout extension
+
+extension RootViewController: UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.bounds.width, height: view.bounds.height / 3)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout
+        collectionViewLayout: UICollectionViewLayout,
+                        minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+
+}
+
 // MARK: - RootViewController private
 
 private extension RootViewController {
@@ -57,6 +81,8 @@ extension RootViewController: UISearchBarDelegate {
     }
 
 }
+
+// MARK: - VideosDataSourceErrorHandler
 
 extension RootViewController: VideosDataSourceErrorHandler {
 
