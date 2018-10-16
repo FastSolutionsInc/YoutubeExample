@@ -53,6 +53,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="0.17706549657534246" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="SCy-lh-wKF" firstAttribute="height" secondItem="wFS-0h-5jg" secondAttribute="height" multiplier="0.8" id="3ow-64-taC"/>
                                             <constraint firstItem="SCy-lh-wKF" firstAttribute="top" secondItem="wFS-0h-5jg" secondAttribute="top" id="9HL-Es-ol6"/>
@@ -69,6 +70,7 @@
                                             <outlet property="duration" destination="roK-ji-8hG" id="RZ1-EL-v3b"/>
                                             <outlet property="thumbnailImageView" destination="SCy-lh-wKF" id="7IH-Ri-Pf2"/>
                                             <outlet property="videoNameLabel" destination="3PW-9C-Qdk" id="9KG-2J-jBW"/>
+                                            <segue destination="3ec-C8-Mmm" kind="show" identifier="PlayerSegue" id="oLe-LW-RdV"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -87,8 +89,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bZO-z6-4y3"/>
+                    <navigationItem key="navigationItem" title="Youtube" id="bZO-z6-4y3"/>
                     <connections>
+                        <outlet property="collectionView" destination="ou4-p8-M80" id="WVT-6W-COF"/>
                         <outlet property="dataSource" destination="Ndc-Fg-NdF" id="NpF-EH-X0Q"/>
                     </connections>
                 </viewController>
@@ -102,6 +105,14 @@
             </objects>
             <point key="canvasLocation" x="37.600000000000001" y="26.53673163418291"/>
         </scene>
+        <!--PlayerScene-->
+        <scene sceneID="RoY-EZ-GO7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayerScene" id="3ec-C8-Mmm" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fj8-Ed-Ee7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="636" y="26"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="CiF-yU-xgg">
             <objects>
@@ -110,6 +121,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OEX-UU-uMA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="JrS-wp-sKA"/>

@@ -24,6 +24,14 @@ final class VideosDataSource: NSObject {
 
     //MARK: - Interface
 
+    func videoId(by cell: UICollectionViewCell) -> String? {
+        guard
+            let indexPath = collectionView?.indexPath(for: cell),
+            videosProvider.items.count > indexPath.row,
+            let videoId = videosProvider.items[indexPath.row].id?.videoId else { return nil }
+        return videoId
+    }
+
     func fetchVideos(using query: String = "") {
         self.query = query
         videosProvider.fetchVideos(by: query, with: { [weak self] in

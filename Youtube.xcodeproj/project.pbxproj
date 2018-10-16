@@ -15,6 +15,8 @@
 		3702F0172175F5CB00B47E57 /* Snippet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0162175F5CB00B47E57 /* Snippet.swift */; };
 		3702F01A2175F68400B47E57 /* Thumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0192175F68400B47E57 /* Thumbnail.swift */; };
 		3702F01D2175F6E300B47E57 /* Thumbnails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F01C2175F6E300B47E57 /* Thumbnails.swift */; };
+		3702F0202176036A00B47E57 /* PlayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3702F01F2176036A00B47E57 /* PlayerScene.storyboard */; };
+		3702F0222176038700B47E57 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0212176038700B47E57 /* PlayerViewController.swift */; };
 		37046BB921753DD600CF9A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BB821753DD600CF9A78 /* AppDelegate.swift */; };
 		37046BBB21753DD600CF9A78 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BBA21753DD600CF9A78 /* RootViewController.swift */; };
 		37046BBE21753DD600CF9A78 /* RootScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37046BBC21753DD600CF9A78 /* RootScene.storyboard */; };
@@ -46,6 +48,8 @@
 		3702F0162175F5CB00B47E57 /* Snippet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snippet.swift; sourceTree = "<group>"; };
 		3702F0192175F68400B47E57 /* Thumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnail.swift; sourceTree = "<group>"; };
 		3702F01C2175F6E300B47E57 /* Thumbnails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnails.swift; sourceTree = "<group>"; };
+		3702F01F2176036A00B47E57 /* PlayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerScene.storyboard; sourceTree = "<group>"; };
+		3702F0212176038700B47E57 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		37046BB521753DD600CF9A78 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37046BB821753DD600CF9A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37046BBA21753DD600CF9A78 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				3702F0062175C51300B47E57 /* Root */,
+				3702F01E2176035200B47E57 /* Player */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -223,6 +228,15 @@
 				3702F01C2175F6E300B47E57 /* Thumbnails.swift */,
 			);
 			path = Thumbnails;
+			sourceTree = "<group>";
+		};
+		3702F01E2176035200B47E57 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				3702F01F2176036A00B47E57 /* PlayerScene.storyboard */,
+				3702F0212176038700B47E57 /* PlayerViewController.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 		37046BAC21753DD600CF9A78 = {
@@ -364,6 +378,7 @@
 			files = (
 				37046BC321753DDA00CF9A78 /* LaunchScreen.storyboard in Resources */,
 				37046BC021753DDA00CF9A78 /* Assets.xcassets in Resources */,
+				3702F0202176036A00B47E57 /* PlayerScene.storyboard in Resources */,
 				37046BBE21753DD600CF9A78 /* RootScene.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +466,7 @@
 				37046BBB21753DD600CF9A78 /* RootViewController.swift in Sources */,
 				3702EFFA2175B40E00B47E57 /* VideoInfo.swift in Sources */,
 				37E0E49321754353000F0C54 /* VideoInfoProvider.swift in Sources */,
+				3702F0222176038700B47E57 /* PlayerViewController.swift in Sources */,
 				37046BB921753DD600CF9A78 /* AppDelegate.swift in Sources */,
 				3702F0172175F5CB00B47E57 /* Snippet.swift in Sources */,
 				3702F0092175CAE000B47E57 /* VideosDataSource.swift in Sources */,
@@ -621,7 +637,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = Youtube/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -637,7 +656,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = Youtube/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -653,7 +675,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = YoutubeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer.YoutubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -670,7 +696,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = YoutubeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer.YoutubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

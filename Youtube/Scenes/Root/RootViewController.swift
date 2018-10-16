@@ -8,7 +8,8 @@ final class RootViewController: UIViewController {
     // MARK: - IBOutlets
 
     @IBOutlet private weak var dataSource: VideosDataSource?
-
+    @IBOutlet private weak var collectionView: UICollectionView?
+    
     // MARK: - Properties
 
     private let searchController = UISearchController(searchResultsController: nil)
@@ -20,6 +21,14 @@ final class RootViewController: UIViewController {
         setUpSearchController()
         dataSource?.fetchVideos()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let playerViewController = segue.destination as? PlayerViewController,
+            let cell = sender as? UICollectionViewCell,
+            let videoId = dataSource?.videoId(by: cell) else { return }
+        playerViewController.videoId = videoId
+    }
 
 }
 
@@ -28,6 +37,7 @@ final class RootViewController: UIViewController {
 private extension RootViewController {
 
     func setUpSearchController() {
+        searchController.searchBar.tintColor = .white
         searchController.searchBar.delegate = self
         searchController.searchBar.placeholder = "Search video"
         navigationItem.searchController = searchController
