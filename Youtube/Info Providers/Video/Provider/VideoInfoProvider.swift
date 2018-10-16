@@ -5,29 +5,33 @@ import AlamofireObjectMapper
 
 final class VideoInfoProvider {
 
+    private(set) var items = [VideoInfo]()
     private(set) var isLastPageLoaded = false
     private var nextPageToken: String?
     private var query: String = ""
 
-    func fetchVideos(by query: String, with success: @escaping (_ videos: [VideoInfo]) -> Void, or failure: @escaping (_ error: Error) -> Void) {
+    func fetchVideos(by query: String, with success: @escaping () -> Void, or failure: @escaping (_ error: Error) -> Void) {
         if self.query != query {
             reset()
+        } else if isLastPageLoaded {
+            success()
         }
         fetchVideoData(by: query, with: { [weak self] (response) in
             guard let `self` = self else { return }
+            self.items.append(contentsOf: response.items)
             guard let nextPageToken = response.nextPageToken else {
                 self.isLastPageLoaded = true
                 self.nextPageToken = nil
-                success(response.items)
+                success()
                 return
             }
             self.nextPageToken = nextPageToken
-            success(response.items)
+            success()
         }, or: failure)
     }
 
     private func fetchVideoData(by query: String, with success: @escaping (_ response: VideosResponse) -> Void, or failure: @escaping (_ error: Error) -> Void) {
-        let options = Options(nextPageToken: nextPageToken)
+        let options = Options(q: query, nextPageToken: nextPageToken)
         SessionManager.default.request("https://www.googleapis.com/youtube/v3/search", method: .get, parameters: options.toJSON(), encoding: URLEncoding.methodDependent, headers: nil).responseObject { (response: DataResponse<VideosResponse>) in
             switch response.result {
             case .success(let responseValue):
@@ -41,6 +45,7 @@ final class VideoInfoProvider {
     }
 
     private func reset() {
+        items.removeAll()
         isLastPageLoaded = false
         nextPageToken = nil
     }

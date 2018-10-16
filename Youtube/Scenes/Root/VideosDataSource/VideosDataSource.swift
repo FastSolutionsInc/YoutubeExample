@@ -18,7 +18,6 @@ final class VideosDataSource: NSObject {
 
     //MARK: - Properties
 
-    private(set) var items = [VideoInfo]()
     private let cellIdentifier = "Cell"
     private let videosProvider = VideoInfoProvider()
     private var query: String!
@@ -26,9 +25,9 @@ final class VideosDataSource: NSObject {
     //MARK: - Interface
 
     func fetchVideos(using query: String = "") {
-        videosProvider.fetchVideos(by: query, with: { [weak self] (newItems) in
+        self.query = query
+        videosProvider.fetchVideos(by: query, with: { [weak self] in
             guard let `self` = self else { return }
-            self.items.append(contentsOf: newItems)
             self.reloadUI()
         }) { [weak self] (error) in
             guard let `self` = self else { return }
@@ -53,16 +52,16 @@ private extension VideosDataSource {
 extension VideosDataSource: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return items.count
+        return videosProvider.items.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! VideoCell
-        if indexPath.row < items.count {
-            let info = items[indexPath.row]
+        if indexPath.row < videosProvider.items.count {
+            let info = videosProvider.items[indexPath.row]
             cell.setUp(info)
         }
-        guard indexPath.row == items.count - 1 else { return cell }
+        guard indexPath.row == videosProvider.items.count - 1 else { return cell }
         fetchVideos(using: query)
         return cell
     }

@@ -42,6 +42,7 @@ extension RootViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let query = searchBar.text else { return }
+        searchController.isActive = false
         dataSource?.fetchVideos(using: query)
     }
 

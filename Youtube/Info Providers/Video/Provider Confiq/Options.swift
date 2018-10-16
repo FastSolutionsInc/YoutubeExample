@@ -39,7 +39,7 @@ extension Options: BaseMappable {
         q >>> map["q"]
         type >>> map["type"]
         key >>> map["key"]
-        nextPageToken >>> map["nextPageToken"]
+        nextPageToken >>> map["pageToken"]
     }
 
 }
