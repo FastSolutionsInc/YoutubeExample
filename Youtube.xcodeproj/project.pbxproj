@@ -11,6 +11,7 @@
 		3702EFFD2175B61C00B47E57 /* VideoId.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702EFFC2175B61C00B47E57 /* VideoId.swift */; };
 		3702F0042175C32900B47E57 /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0032175C32900B47E57 /* Options.swift */; };
 		3702F0092175CAE000B47E57 /* VideosDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0082175CAE000B47E57 /* VideosDataSource.swift */; };
+		3702F00D2175DBCB00B47E57 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F00C2175DBCB00B47E57 /* VideoCell.swift */; };
 		37046BB921753DD600CF9A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BB821753DD600CF9A78 /* AppDelegate.swift */; };
 		37046BBB21753DD600CF9A78 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BBA21753DD600CF9A78 /* RootViewController.swift */; };
 		37046BBE21753DD600CF9A78 /* RootScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37046BBC21753DD600CF9A78 /* RootScene.storyboard */; };
@@ -38,6 +39,7 @@
 		3702EFFC2175B61C00B47E57 /* VideoId.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoId.swift; sourceTree = "<group>"; };
 		3702F0032175C32900B47E57 /* Options.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		3702F0082175CAE000B47E57 /* VideosDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosDataSource.swift; sourceTree = "<group>"; };
+		3702F00C2175DBCB00B47E57 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		37046BB521753DD600CF9A78 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37046BB821753DD600CF9A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37046BBA21753DD600CF9A78 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +176,22 @@
 			path = VideosDataSource;
 			sourceTree = "<group>";
 		};
+		3702F00A2175DB8B00B47E57 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3702F00B2175DB9300B47E57 /* Video Cell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3702F00B2175DB9300B47E57 /* Video Cell */ = {
+			isa = PBXGroup;
+			children = (
+				3702F00C2175DBCB00B47E57 /* VideoCell.swift */,
+			);
+			path = "Video Cell";
+			sourceTree = "<group>";
+		};
 		37046BAC21753DD600CF9A78 = {
 			isa = PBXGroup;
 			children = (
@@ -198,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				37046BB821753DD600CF9A78 /* AppDelegate.swift */,
+				3702F00A2175DB8B00B47E57 /* Views */,
 				3702F0052175C50600B47E57 /* Scenes */,
 				3702EFFF2175C2EE00B47E57 /* Info Providers */,
 				3702EFF62175B3CB00B47E57 /* Models */,
@@ -392,6 +411,7 @@
 			files = (
 				3702EFFD2175B61C00B47E57 /* VideoId.swift in Sources */,
 				37E0E49521754534000F0C54 /* VideosResponse.swift in Sources */,
+				3702F00D2175DBCB00B47E57 /* VideoCell.swift in Sources */,
 				37046BBB21753DD600CF9A78 /* RootViewController.swift in Sources */,
 				3702EFFA2175B40E00B47E57 /* VideoInfo.swift in Sources */,
 				37E0E49321754353000F0C54 /* VideoInfoProvider.swift in Sources */,

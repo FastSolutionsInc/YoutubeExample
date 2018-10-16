@@ -57,7 +57,11 @@ extension VideosDataSource: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! VideoCell
+        if indexPath.row < items.count {
+            let info = items[indexPath.row]
+            cell.setUp(info)
+        }
         guard indexPath.row == items.count - 1 else { return cell }
         fetchVideos(using: query)
         return cell
