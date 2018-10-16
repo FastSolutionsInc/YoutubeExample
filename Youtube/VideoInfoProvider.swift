@@ -15,7 +15,7 @@ struct VideoInfoProvider {
 
     func fetchVideos(by query: String, with success: () -> Void, or failure: () -> Void) {
         let options = [
-            "part" : "snippet",
+            "part" : "id",
             "maxResults" : "10",
             "q" : query,
             "type" : "video",

@@ -1,5 +1,5 @@
 //
-//  VideosResponse.swift
+//  VideoId.swift
 //  Youtube
 //
 //  Created by Vlad Shchuka on 10/16/18.
@@ -9,18 +9,22 @@
 import Foundation
 import ObjectMapper
 
-final class VideosResponse {
-    
+final class VideoId {
+
+    var videoId: String?
+    var kind: String?
+
 }
 
-extension VideosResponse: Mappable {
+extension VideoId: Mappable {
 
     convenience init?(map: Map) {
         self.init()
     }
 
     func mapping(map: Map) {
-        print(map.JSON)
+        videoId <- map["videoId"]
+        kind <- map["kind"]
     }
 
 }
