@@ -19,10 +19,10 @@ final class PlayerViewController: UIViewController {
             return
         }
         player = YTSwiftyPlayer(frame: view.frame, playerVars: [.videoID(videoId)])
+        player.loadPlayer()
         player.autoplay = true
         view = player
         player.delegate = self
-        player.loadPlayer()
     }
 
 }
