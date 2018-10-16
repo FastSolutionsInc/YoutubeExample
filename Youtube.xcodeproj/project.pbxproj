@@ -13,6 +13,8 @@
 		37046BC021753DDA00CF9A78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37046BBF21753DDA00CF9A78 /* Assets.xcassets */; };
 		37046BC321753DDA00CF9A78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37046BC121753DDA00CF9A78 /* LaunchScreen.storyboard */; };
 		37046BCE21753DDA00CF9A78 /* YoutubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BCD21753DDA00CF9A78 /* YoutubeTests.swift */; };
+		37E0E49321754353000F0C54 /* VideoInfoProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0E49221754353000F0C54 /* VideoInfoProvider.swift */; };
+		37E0E49521754534000F0C54 /* VideosResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E0E49421754534000F0C54 /* VideosResponse.swift */; };
 		6E444F3618761558BCB7F37E /* Pods_Youtube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E590B98D7D8AEE358647ACBE /* Pods_Youtube.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		37046BC921753DDA00CF9A78 /* YoutubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YoutubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37046BCD21753DDA00CF9A78 /* YoutubeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeTests.swift; sourceTree = "<group>"; };
 		37046BCF21753DDA00CF9A78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37E0E49221754353000F0C54 /* VideoInfoProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoInfoProvider.swift; sourceTree = "<group>"; };
+		37E0E49421754534000F0C54 /* VideosResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosResponse.swift; sourceTree = "<group>"; };
 		E590B98D7D8AEE358647ACBE /* Pods_Youtube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Youtube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC31BD1AD9D86AE6C5428E48 /* Pods-Youtube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Youtube.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Youtube/Pods-Youtube.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +98,8 @@
 			children = (
 				37046BB821753DD600CF9A78 /* AppDelegate.swift */,
 				37046BBA21753DD600CF9A78 /* ViewController.swift */,
+				37E0E49221754353000F0C54 /* VideoInfoProvider.swift */,
+				37E0E49421754534000F0C54 /* VideosResponse.swift */,
 				37046BBC21753DD600CF9A78 /* Main.storyboard */,
 				37046BBF21753DDA00CF9A78 /* Assets.xcassets */,
 				37046BC121753DDA00CF9A78 /* LaunchScreen.storyboard */,
@@ -284,7 +290,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37E0E49521754534000F0C54 /* VideosResponse.swift in Sources */,
 				37046BBB21753DD600CF9A78 /* ViewController.swift in Sources */,
+				37E0E49321754353000F0C54 /* VideoInfoProvider.swift in Sources */,
 				37046BB921753DD600CF9A78 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,8 +459,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = Youtube/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer.Youtube;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -467,8 +478,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = Youtube/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer.Youtube;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -483,7 +497,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = YoutubeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer.YoutubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -500,7 +518,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SDQPWCCGCS;
 				INFOPLIST_FILE = YoutubeTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.shchukavlad.developer.YoutubeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
