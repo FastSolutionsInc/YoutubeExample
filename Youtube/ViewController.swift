@@ -7,11 +7,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        videosProvider.fetchVideos(by: "Some", with: {
-            
-        }) {
-            
-        }
+        
     }
 
 
