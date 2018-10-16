@@ -7,8 +7,12 @@ final class VideoInfoProvider {
 
     private(set) var isLastPageLoaded = false
     private var nextPageToken: String?
+    private var query: String = ""
 
     func fetchVideos(by query: String, with success: @escaping (_ videos: [VideoInfo]) -> Void, or failure: @escaping (_ error: Error) -> Void) {
+        if self.query != query {
+            reset()
+        }
         fetchVideoData(by: query, with: { [weak self] (response) in
             guard let `self` = self else { return }
             guard let nextPageToken = response.nextPageToken else {
@@ -34,6 +38,11 @@ final class VideoInfoProvider {
                 break
             }
         }
+    }
+
+    private func reset() {
+        isLastPageLoaded = false
+        nextPageToken = nil
     }
 
 }
