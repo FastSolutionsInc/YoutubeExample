@@ -16,6 +16,7 @@ final class VideoCell: UICollectionViewCell {
 
     func setUp(_ info: VideoInfo) {
         videoNameLabel.text = info.snippet?.title
+        duration.text = info.duration
         guard
             let imageLink = info.snippet?.thumbnails?.medium?.url,
             let url = URL(string: imageLink) else { return }

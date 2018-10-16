@@ -57,3 +57,14 @@ extension RootViewController: UISearchBarDelegate {
     }
 
 }
+
+extension RootViewController: VideosDataSourceErrorHandler {
+
+    func handle(_ error: Error) {
+        let alert = UIAlertController.init(title: "Network error", message: error.localizedDescription, preferredStyle: .alert)
+        let close = UIAlertAction.init(title: "Close", style: .cancel, handler: nil)
+        alert.addAction(close)
+        present(alert, animated: true, completion: nil)
+    }
+
+}

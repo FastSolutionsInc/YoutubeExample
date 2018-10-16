@@ -6,6 +6,7 @@ final class VideoInfo {
 
     var etag: String?
     var kind: String?
+    var duration: String?
     var id: VideoId?
     var snippet: Snippet?
 

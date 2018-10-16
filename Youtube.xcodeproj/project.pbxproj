@@ -17,6 +17,11 @@
 		3702F01D2175F6E300B47E57 /* Thumbnails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F01C2175F6E300B47E57 /* Thumbnails.swift */; };
 		3702F0202176036A00B47E57 /* PlayerScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3702F01F2176036A00B47E57 /* PlayerScene.storyboard */; };
 		3702F0222176038700B47E57 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0212176038700B47E57 /* PlayerViewController.swift */; };
+		3702F024217615F700B47E57 /* VideoDetailInfoOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F023217615F700B47E57 /* VideoDetailInfoOptions.swift */; };
+		3702F0272176183000B47E57 /* VideosDetailInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0262176183000B47E57 /* VideosDetailInfoResponse.swift */; };
+		3702F02A2176196400B47E57 /* VideoDetailInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F0292176196400B47E57 /* VideoDetailInfo.swift */; };
+		3702F02C2176199700B47E57 /* ContentDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F02B2176199700B47E57 /* ContentDetails.swift */; };
+		3702F02F217621B300B47E57 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3702F02E217621B300B47E57 /* StringExtensions.swift */; };
 		37046BB921753DD600CF9A78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BB821753DD600CF9A78 /* AppDelegate.swift */; };
 		37046BBB21753DD600CF9A78 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37046BBA21753DD600CF9A78 /* RootViewController.swift */; };
 		37046BBE21753DD600CF9A78 /* RootScene.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37046BBC21753DD600CF9A78 /* RootScene.storyboard */; };
@@ -50,6 +55,11 @@
 		3702F01C2175F6E300B47E57 /* Thumbnails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Thumbnails.swift; sourceTree = "<group>"; };
 		3702F01F2176036A00B47E57 /* PlayerScene.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayerScene.storyboard; sourceTree = "<group>"; };
 		3702F0212176038700B47E57 /* PlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		3702F023217615F700B47E57 /* VideoDetailInfoOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailInfoOptions.swift; sourceTree = "<group>"; };
+		3702F0262176183000B47E57 /* VideosDetailInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideosDetailInfoResponse.swift; sourceTree = "<group>"; };
+		3702F0292176196400B47E57 /* VideoDetailInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailInfo.swift; sourceTree = "<group>"; };
+		3702F02B2176199700B47E57 /* ContentDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetails.swift; sourceTree = "<group>"; };
+		3702F02E217621B300B47E57 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		37046BB521753DD600CF9A78 /* Youtube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Youtube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37046BB821753DD600CF9A78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37046BBA21753DD600CF9A78 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +106,7 @@
 		3702EFF62175B3CB00B47E57 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3702F025217617F500B47E57 /* Videos Detail Info Response */,
 				3702EFF72175B3D800B47E57 /* Videos List Response */,
 			);
 			path = Models;
@@ -157,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				3702F0032175C32900B47E57 /* Options.swift */,
+				3702F023217615F700B47E57 /* VideoDetailInfoOptions.swift */,
 			);
 			path = "Provider Confiq";
 			sourceTree = "<group>";
@@ -239,6 +251,32 @@
 			path = Player;
 			sourceTree = "<group>";
 		};
+		3702F025217617F500B47E57 /* Videos Detail Info Response */ = {
+			isa = PBXGroup;
+			children = (
+				3702F0262176183000B47E57 /* VideosDetailInfoResponse.swift */,
+				3702F0282176191800B47E57 /* Detail Info */,
+			);
+			path = "Videos Detail Info Response";
+			sourceTree = "<group>";
+		};
+		3702F0282176191800B47E57 /* Detail Info */ = {
+			isa = PBXGroup;
+			children = (
+				3702F0292176196400B47E57 /* VideoDetailInfo.swift */,
+				3702F02B2176199700B47E57 /* ContentDetails.swift */,
+			);
+			path = "Detail Info";
+			sourceTree = "<group>";
+		};
+		3702F02D217621A100B47E57 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3702F02E217621B300B47E57 /* StringExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		37046BAC21753DD600CF9A78 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				37046BB821753DD600CF9A78 /* AppDelegate.swift */,
+				3702F02D217621A100B47E57 /* Extensions */,
 				3702F00A2175DB8B00B47E57 /* Views */,
 				3702F0052175C50600B47E57 /* Scenes */,
 				3702EFFF2175C2EE00B47E57 /* Info Providers */,
@@ -462,14 +501,19 @@
 				3702EFFD2175B61C00B47E57 /* VideoId.swift in Sources */,
 				37E0E49521754534000F0C54 /* VideosResponse.swift in Sources */,
 				3702F01D2175F6E300B47E57 /* Thumbnails.swift in Sources */,
+				3702F024217615F700B47E57 /* VideoDetailInfoOptions.swift in Sources */,
 				3702F00D2175DBCB00B47E57 /* VideoCell.swift in Sources */,
 				37046BBB21753DD600CF9A78 /* RootViewController.swift in Sources */,
+				3702F02A2176196400B47E57 /* VideoDetailInfo.swift in Sources */,
 				3702EFFA2175B40E00B47E57 /* VideoInfo.swift in Sources */,
 				37E0E49321754353000F0C54 /* VideoInfoProvider.swift in Sources */,
+				3702F0272176183000B47E57 /* VideosDetailInfoResponse.swift in Sources */,
 				3702F0222176038700B47E57 /* PlayerViewController.swift in Sources */,
 				37046BB921753DD600CF9A78 /* AppDelegate.swift in Sources */,
+				3702F02F217621B300B47E57 /* StringExtensions.swift in Sources */,
 				3702F0172175F5CB00B47E57 /* Snippet.swift in Sources */,
 				3702F0092175CAE000B47E57 /* VideosDataSource.swift in Sources */,
+				3702F02C2176199700B47E57 /* ContentDetails.swift in Sources */,
 				3702F0042175C32900B47E57 /* Options.swift in Sources */,
 				3702F01A2175F68400B47E57 /* Thumbnail.swift in Sources */,
 			);
